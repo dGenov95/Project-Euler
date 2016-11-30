@@ -1,31 +1,54 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class LargestThreeDigitsPalendrome {
 
-	public static void main(String []args){
-		System.out.println(checkPelandrome("123321"));
+	public static void main(String[] args)
+	{
+		ArrayList<Integer> answers = new ArrayList<Integer>();
+
+		int number1 = 999;
+		int number2 = 999;
+		int product = 0;
+		while(number1>100){
+
+
+			product = number1*number2;
+			if(checkForPalindrome(product)){
+				answers.add(product);
+			}
+
+			if(number2==100){
+				number1--;
+				number2 = number1;
+			}
+			else{
+				number2--;
+			}
+
+		}
+
+		Collections.sort(answers);
+		int answer = answers.get(answers.size()-1);
+		System.out.println(answer);
 	}
 
 
-	private static boolean checkPelandrome(String num){
-
-		boolean result = false; //the result
-		char[] numberArr = num.toCharArray(); //array of digits
-		int lastChar = numberArr.length-1; // last digit in array
-		for(int i = 0; i < numberArr.length-1; i++){ // compare each digit 
-			if(numberArr[i] == numberArr[lastChar]){
-				System.out.println("Comparing " + numberArr[i] + "With " + numberArr[lastChar]);
-				lastChar--;
-				result = true;
-
+	public static boolean checkForPalindrome(int number){
+		String numString = Integer.toString(number); //get the string representation of the number
+		boolean retVal = true; //initially the return val is false
+		int firstIndex = 0; // start index is the first char from the string, initially
+		int secondIndex = numString.length()-1; // end index is the last char from string , initially
+		while(firstIndex < secondIndex){ //loop until the middle is reached
+			if(numString.charAt(firstIndex)!= numString.charAt(secondIndex)){
+				retVal = false; //return val is false now
+				break; // if the digits representing each index do not match, exit the loop
 			}
-			else{
-				System.out.println(" FAILED Comparing " + numberArr[i] + "With " + numberArr[lastChar]);
-				result = false;
-				break;
-			}
+			//otherwise set the return val to be true and check the next pair of digits
+			firstIndex++; //get the next digit from left to right
+			secondIndex--; // get the next digit from right to left
 		}
 
-		return result;
+		return retVal;
 	}
 }
