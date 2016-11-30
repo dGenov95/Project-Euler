@@ -1,6 +1,6 @@
 
 
-public class EvenFibonnaci {
+public class Problem2 {
 
 	public static void main(String[] args) {
 		int prevFirst=0;

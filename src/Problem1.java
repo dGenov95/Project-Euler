@@ -1,7 +1,7 @@
 import java.util.HashSet;
 import java.util.Set;
 
-public class MultiplesOf3and5 {
+public class Problem1 {
 
 	public static void main(String[] args) {
 		Set<Integer> multiplesSet = multiplesOf(1000);

@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class LargestThreeDigitsPalendrome {
+public class Problem4 {
 
 	public static void main(String[] args)
 	{
@@ -27,10 +27,15 @@ public class LargestThreeDigitsPalendrome {
 			}
 
 		}
-
+		
 		Collections.sort(answers);
+		System.out.print("[ ");
+		for(int i =0; i < answers.size(); i++){
+			System.out.print(answers.get(i) + " , " );
+		}
+		System.out.print(" ]\n");
 		int answer = answers.get(answers.size()-1);
-		System.out.println(answer);
+		System.out.println("Biggest : " +answer);
 	}
 
 

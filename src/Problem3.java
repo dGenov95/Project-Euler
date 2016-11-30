@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class LargestPrimeFactor {
+public class Problem3 {
 
 	public static void main(String[] args) {
 		long beginTime = System.currentTimeMillis();
