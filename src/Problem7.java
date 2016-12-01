@@ -1,7 +1,3 @@
-import java.security.cert.CRLReason;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public class Problem7 {
 
