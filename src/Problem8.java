@@ -1,7 +1,3 @@
-import java.lang.management.ThreadMXBean;
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Problem8 {
 
